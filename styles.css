@@ -3,8 +3,13 @@
     text-align: center;
 }
 
+.floating-border {
+    box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
+    border-radius: 2rem;
+}
+
 header {
-    height: 12vh;
+    height: 7.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -12,8 +17,7 @@ header {
     padding: 0 2.5rem;
     margin: 1.5rem;
 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    border-radius: 12px;
+
     overflow: hidden;
 }
 
@@ -58,26 +62,41 @@ section {
 }
 
 .intro-container {
-    height: 30vh;
+    max-height: 35rem;
 
     background-color: beige;
     display: flex;
     width: 65%;
 
     justify-content: space-between;
+    align-content: flex-end;
+
     max-width: 75rem;
     padding: 2rem;
+    gap: 1rem;
 }
 
 .intro-info {
     display: flex;
+    flex: 3;
+    padding: 1rem;
     flex-direction: column;
+    justify-content: center;
     padding: 3rem;
+    flex-shrink: 1;
+}
+
+#intro-img {
+    flex: 1; /* Image takes up less space */
+    max-width: 25%;
+    height: auto;
+    align-self: center;
+    object-fit: cover;
+    transition: all 0.3s ease;
 }
 
 .intro-info * {
     text-align: left;
-    color: aqua;
 }
 
 
@@ -96,12 +115,23 @@ section {
         display: none;
     }
 
+    #intro-img {
+        flex: 1; /* Image takes up less space */
+        max-width: 65%;
+        height: auto;
+        align-self: center;
+        object-fit: cover;
+        transition: all 0.3s ease;
+    }
+
 
     .intro-container {
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         text-align: center;
-        height: 45vh;
+        max-height: 55rem;
+        padding: 0.5rem;
     }
 
     .intro-info * {
@@ -109,5 +139,13 @@ section {
         padding: 0;
         text-align: center; 
         /* Optional: Center text when stacked */
+    }
+}
+
+@media (max-width: 1440px) {
+    .intro-container {
+        margin: 1.5rem;
+        width: 100%;
+        padding: 2rem;
     }
 }
