@@ -1,28 +1,47 @@
 
+/* colour pallete */
+:root {
+    --primary-color: #474787;
+    --secondary-color: #2C2C54;
+    --accent-color: #FF5722;
+    --background-color:  #2C2C54;
+    --text-color: #ECECEC;
+    --muted-text-color: #AAABB8;
+    --border-color: #E0E0E0;
+  }
+  
+
 * {
+    color: var(--text-color);
     text-align: center;
 }
 
 .floating-border {
     box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
-    border-radius: 2rem;
+    border-radius: 1.5rem;
 }
 
 header {
-    height: 7.5rem;
+    height: 9.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: lightgrey;
     padding: 0 2.5rem;
     margin: 1.5rem;
 
     overflow: hidden;
+
+    background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url("./resources/header.jpeg");
+    background-size: cover;
 }
 
 body {
     font-family: 'Work Sans', sans-serif;
-    color: #333;
+    background: linear-gradient(90deg, var(--muted-text-color), var(--text-color), var(--muted-text-color));
+    
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("./resources/pattern.jpg");
+    background-size: contain;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,7 +52,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    color: #111;
+    color: var(--text-color);
   }
   
 
@@ -84,15 +103,19 @@ section {
     transition: all 0.3s ease;
 }
 
-.container:hover {
+.intro-container:hover {
     transform: scale(1.02);
+
+    box-shadow: 0 0.1rem 0.8rem rgba(125, 125, 125, 0.9);
   }
 
 .intro-container {
     display: flex;
     max-height: 35rem;
-
-    background-color: beige;
+    background: linear-gradient(rgba(68,63,98, 0.8), rgba(0, 0, 0, 0.9)), url("./resources/grain-splash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--primary-color);
     gap: 1rem;
 }
 
@@ -127,7 +150,6 @@ section {
     gap: 0.5rem;
     min-height: 40rem;
 
-    background-color: antiquewhite;
 }   
 
 .card {
@@ -135,20 +157,49 @@ section {
     margin: 0;
     display: flex;
     flex-direction: column;
-    background-color: aqua;
     box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
-    border-radius: 2rem;
+    border-radius: 1.5rem;
     transition: all 0.3s ease;
 }
+
+.card:hover {
+    transform: scale(1.01);
+
+    box-shadow: 0 0.1rem 0.8rem rgba(125, 125, 125, 0.9);
+  }
 
 /* Card level adjustments */
 
 .hobby-card { 
     grid-area: 1 / 1 / 1 / span 2;
     flex-direction: column;
-
+    color: #111;
+    background: linear-gradient(-90deg, rgba(51,104,114, 0.8), rgba(0,0,0, 0.9)), url("./resources/surf.jpg");
+    background-size: cover;
     align-items: flex-start;
 }
+
+.hobby-card:hover {
+    transform: translateY(-1rem);
+  }
+
+  .project-card:hover {
+    transform: translateX(1rem);
+  }
+
+  .location-card:hover {
+    transform: translateY(1rem);
+  }
+
+  .connect-card:hover {
+    transform: scale(1.2);
+  }
+
+  .tech-stack-card:hover {
+    transform: translateX(-1rem);
+  }
+
+
 
 .hobbies-list {
     display: grid;
@@ -165,31 +216,42 @@ section {
     margin-left: 2rem;
     font-weight: 400;
     font-size: 1rem;
-    color: #333;
   }
 
 .connect-card { 
     align-items: center;
     justify-content: center;
+    background: linear-gradient(rgba(0,0,0, 0.6), rgba(0, 0, 0, 0.9)), url("./resources/connect.PNG");
+    background-size: cover;
     grid-area: 2 / 2 / span 1 / span 1;
 }
 .tech-stack-card { 
     align-items: flex-end;
     justify-content: flex-start;
     flex-direction: column-reverse;
+    background: linear-gradient(rgba(172, 148, 212, 0.8), rgba(0, 0, 0, 0.9)), url("./resources/tech.jpg");
+    background-size: cover;
     grid-area:  2 /  1 / span 2 / 1 ;
 }
+
+
 .location-card { 
     grid-area:  3 / 2 / 3 / span 2;
+    background: linear-gradient(-90deg, rgba(0, 0, 0, 0.9), rgba(51,104,114, 0.8)), url("./resources/cape-town.jpg");
+    background-size: cover;
     align-items: flex-end;
  }
 .project-card { 
     align-items: flex-start;
     justify-content: flex-end;
     grid-area:  1 / 3 / span 2 / 3;
+    background: linear-gradient(rgba(172, 148, 212, 0.8), rgba(0, 0, 0, 0.9)), url("./resources/electronics.jpg");
+    background-size: cover;
 }
 
 /* projects section */
+
+
 
 .project-grid {
     display: grid;
@@ -198,7 +260,8 @@ section {
   }
   
   .project-grid .card {
-    background-color: #f9f9f9;
+    background: linear-gradient( rgba(0, 0, 0, 0.9), rgba(240, 240, 240, 0.7)), url("./resources/grain-splash.jpg");
+    background-size: cover;
     padding: 1.5rem;
     text-align: center;
     cursor: pointer;
@@ -207,7 +270,10 @@ section {
   
   .project-grid .card:hover {
     transform: translateY(-0.2rem);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    
+    box-shadow: 0 0.1rem 0.8rem rgba(125, 125, 125, 0.9);
+    background: linear-gradient( rgba(0, 0, 0, 0.9), rgba(51,104,114, 0.8)), url("./resources/friends.jpg");
+    
   }
   
   .project-grid .presentation-card {
@@ -215,7 +281,8 @@ section {
     /*display: none; /* Hidden initially */
     display: flex;
     flex-direction: row;
-    background-color: #fff;
+    background: linear-gradient(rgba(240,240,240, 0.8),rgba(51,104,114, 0.8), rgba(0, 0, 0, 0.9)), url("./resources/white-grain.jpg");
+    background-size: cover;
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
@@ -229,6 +296,10 @@ section {
     gap: 1rem;
   }
   
+ .info h2 {
+    color: #111;
+  }
+
   .presentation-card img {
     max-width: 25%;
     flex: 1;
@@ -241,6 +312,7 @@ section {
   .presentation-card.active {
     display: grid; /* Shows it when active */
     grid-template-columns: 1fr 1fr;
+    
     gap: 2rem;
   }
   
@@ -251,7 +323,12 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #0056b3;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url("./resources/tech-stack-splash.jpg");
+    background-size: cover;
+}
+
+.tech-stack:hover {
+    transform: none;
 }
 
 .tech-grid {
@@ -276,17 +353,18 @@ section {
   
   .tech-item:hover {
     transform: scale(1.05);
-    border: 2px solid red; /* Darker green border */
+    border: 0.1rem solid white;
+    box-shadow: 0 0.4rem 0.8rem rgba(125, 125, 125, 0.5);
   }
   
   .active {
-    background-color: palevioletred;
+    background-color: rgb(51,104,114);
     color: white; 
     cursor: pointer; 
   }
 
   .learning {
-    background-color: lightcoral;
+    background-color: rgb(172, 148, 212);
     color: white; 
     cursor: not-allowed;
     opacity: 0.6; 
@@ -318,25 +396,67 @@ section {
 
 /* Active item bullet color */
 .key-bullet.in-rotation {
-    background-color: palevioletred; /* Green for items in the rotation */
+    background-color: rgb(51,104,114); 
 }
 
 /* Learning item bullet color */
 .key-bullet.learning-tech {
-    background-color: lightcoral; /* Yellow for items being learned */
+    background-color: rgb(172, 148, 212); 
     opacity: 0.6;
 }
 
 /* Hobby section */
 .hobbies .card {
     justify-content: center;
+    background-size: cover;
 }
+
+.hobbies:hover {
+    transform: none;
+}
+
+.hobbies .card:hover {
+    transform: scale(0.9);
+}
+
+
+
+.climbing-card {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("./resources/climb-2.png");
+}
+
+.kitesurfing-card {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("./resources/kite-2.png");
+}
+
+.guitar-card {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("./resources/guitar-2.png");
+}
+
+.skating-card {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("./resources/skate-2.png");
+}
+
+.surfing-card {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)), url("./resources/surf-2.jpg");
+}
+
+.trail-card {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("./resources/trail.png");
+}
+
+.hobby-title-card {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("./resources/row.png");
+}
+
 
 /* footer section */
 footer {
     padding: 0 2.5rem;
     margin: 1.5rem;
-    background-color: rgb(79, 79, 79);
+    margin-bottom: 5rem;
+    background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url("./resources/header.jpeg");
+    background-size: cover;
   }
   
   .footer-content {
@@ -355,12 +475,12 @@ footer {
   .footer-left p {
     margin-bottom: 1rem;
     font-size: 1rem;
-    color: #555;
+    color: #999;
   }
   
   .social-icons img {
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     margin-right: 0.5rem;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -377,7 +497,7 @@ footer {
   }
   
   .footer-right a {
-    color: #333;
+    color: #fff;
     text-decoration: none;
     font-weight: 500;
   }
@@ -397,7 +517,7 @@ footer {
     text-align: center;
     margin-top: 0.5rem;
     font-size: 0.875rem;
-    color: #777;
+    color: #999;
   }
   
 
@@ -407,6 +527,7 @@ footer {
 
     header {
         height: 8vh;
+        padding: 0 0.5rem;
     }
 
     section {
@@ -438,6 +559,10 @@ footer {
         text-align: center;
         max-height: 55rem;
         padding: 0.5rem;
+    }
+
+    .card:hover {
+        transform: scale(1.02);
     }
 
     .intro-info * {
@@ -474,6 +599,7 @@ footer {
         align-items: center;
     }
 
+    
     .tech-grid {
         grid-template-columns: repeat(3, 1fr); /* Adjust grid to 2 columns */
         max-width: 40rem;
