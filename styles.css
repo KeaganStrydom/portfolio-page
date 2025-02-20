@@ -17,7 +17,6 @@ header {
     padding: 0 2.5rem;
     margin: 1.5rem;
 
-
     overflow: hidden;
 }
 
@@ -82,7 +81,12 @@ section {
     width: 65%;
     max-width: 75rem;
     padding: 2rem;
+    transition: all 0.3s ease;
 }
+
+.container:hover {
+    transform: scale(1.02);
+  }
 
 .intro-container {
     display: flex;
@@ -116,7 +120,7 @@ section {
 }
 
 /* about section */
-.about-grid {
+.box-grid {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(3, 1fr);
@@ -218,18 +222,71 @@ section {
   
   .tech-item:hover {
     transform: scale(1.05);
-    border-color: #0056b3; /* Darker border on hover */
+    border: 2px solid red; /* Darker green border */
   }
   
+  .active {
+    background-color: palevioletred;
+    color: white; 
+    cursor: pointer; 
+  }
 
-  
+  .learning {
+    background-color: lightcoral;
+    color: white; 
+    cursor: not-allowed;
+    opacity: 0.6; 
+  }
 
+  /* Center the key and make it look clean */
+.tech-stack-key {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* Each key item */
+.key-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Bullet point styles */
+.key-bullet {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+/* Active item bullet color */
+.key-bullet.in-rotation {
+    background-color: palevioletred; /* Green for items in the rotation */
+}
+
+/* Learning item bullet color */
+.key-bullet.learning-tech {
+    background-color: lightcoral; /* Yellow for items being learned */
+    opacity: 0.6;
+}
+
+/* Hobby section */
+.hobbies .card {
+    justify-content: center;
+}
 
 /* responsive design for smaller screens */
 @media (max-width: 768px) {
 
     header {
         height: 8vh;
+    }
+
+    section {
+        margin: 0;
     }
 
     #personal-logo {
@@ -270,13 +327,14 @@ section {
         text-align: left;
     }
 
-    .about-grid {
+    .box-grid {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-content: center;
         min-height: 50rem;
     }
+
     .card {
         min-height: 10rem;
         display: flex;
@@ -286,11 +344,15 @@ section {
         text-align: center;
     }
 
+    .hobby-title-card {
+        min-height: 2rem;
+        align-items: center;
+    }
 
     .tech-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 columns in the first row */
-        grid-template-rows: repeat(1, auto);
-      }
+        grid-template-columns: repeat(3, 1fr); /* Adjust grid to 2 columns */
+        max-width: 40rem;
+    }
 }
 
 @media (max-width: 1440px) {
@@ -300,8 +362,4 @@ section {
         padding: 2rem;
     }
 
-    .tech-grid {
-        grid-template-columns: repeat(4, 1fr); /* 3 columns in the first row */
-        max-width: 40rem;
-      }
 }
