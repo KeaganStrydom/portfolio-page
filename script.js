@@ -151,3 +151,11 @@ setInterval(switchColour, 200);
 updateTime();
 switchColour();
 
+window.onload = function() {
+    // Assuming you want to simulate a click on the first project card
+    const firstProjectCard = document.querySelector(".SLR-card"); // Adjust the selector accordingly
+    console.log(firstProjectCard)
+    if (firstProjectCard) {
+        firstProjectCard.click();  // Trigger the click event programmatically
+    }
+};

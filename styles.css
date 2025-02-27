@@ -301,22 +301,28 @@ section {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     transition: opacity 0.3s ease;
     display: none;
+    justify-items: center;
+    align-items: center;
   }
 
   .presentation-card .info {
     display: flex;
     flex: 2;
     flex-direction: column;
+    width: 75%;
     gap: 1rem;
   }
 
 
   .video-container {
+    margin-top: 2rem;
     position: relative;
-    width: 100%;         /* Make container responsive */
+    justify-self: center;
+    width: 80%;         /* Make container responsive */
     padding-top: 56.25%; /* Maintain a 16:9 aspect ratio (9/16 = 0.5625) */
     height: 0;
     overflow: hidden;    /* Hide overflow */
+ 
 }
 
 .video-container iframe {
@@ -494,7 +500,7 @@ section {
 .hobby-title-card {
     grid-row: 2;
     grid-column: 2;
-    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(172, 148, 212, 0.7)), url("./resources/hobby-title-card.png");
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(172, 148, 212, 0.7)), url("./resources/hobby-title.jpg");
 }
 
 
