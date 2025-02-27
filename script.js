@@ -39,7 +39,7 @@ const projects = {
 };
 
 
-let queue = ['surfing', 'kitesurfing', 'trail', 'guitar', 'skating', 'climbing']
+let queue = ['surfing', 'kitesurfing', 'trail', 'guitar', 'cooking', 'travel', 'skating', 'climbing']
 
 function switchColour() {
     card = document.getElementsByClassName(`${queue[0]}-card`)[0]
@@ -66,7 +66,7 @@ function updateTime() {
 
     const cptTime = new Intl.DateTimeFormat('en-GB', options).format(new Date());
     console.log(cptTime)
-    document.getElementById('time-label').innerHTML= `Cape Town based : <strong>${cptTime}</strong>`;
+    document.getElementById('time-label').innerHTML= `Cape Town based: <strong>${cptTime}</strong>`;
 }
 
 // Function to display the selected project in the presentation card
