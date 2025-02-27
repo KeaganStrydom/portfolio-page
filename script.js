@@ -4,37 +4,37 @@ const projects = {
         title: "Real-time Speed Limit Recognition",
         description: "A speed limit recognition (SLR) system proposed for autonomous driving vehicles. My project was the development of an innovative standalone system that can detect the speed limit and notify drivers audibly when they exceed these limits. Using both off-the-shelf components coupled with specialised 3D parts, I created this standalone real time Speed Limit Recognition (SLR) device. The SLR software was created using Python - testing multiple classifier models such as MLP neural networks, k-Nearet Neighbours and Support Vector Machines (SVMs). An additional web-application was built from scratch using Flask to monitor the real-time camera detections and performance metrics. This system has a 98.3% classification accuracy in real-time traffic settings.",
         tools: "Python, Flask, OpenCV, TensorFlow, Raspberry Pi, Electroncis, CAD, 3D-Printing",
-        img: "./resources/slr.jpg"
+        videoId: "_U35ZOZYeOU"
     },
     "STEM-card": {
         title: "STEM Motion Box (iOS App)",
         description: "STEM Motion Box is an an educational app I developed for students to learn about projectile motion (kinematics). This <strong>project won 1st place in the 2019 National Excellence in Education awards</strong>. Features of this simulation include single-body projectile motion, two-body projectile motion with collision decection and additional slow motion features.",
         tools: "Swift, Photoshop",        
-        img: "./resources/stem.jpg"
+        videoId: "Lt0DDMBmCMo"
     },
     "vending-card": {
         title: "Autonomous Vending Machine",
         description: "Alongside three ambitious group mates in Mechatronics 424, I engaged and collaborated to create an automated vending machine & corresponding graphical interface to vend ping pong balls, small cubes and marbles. Most significantly, our concept integrated a vacuum suction mechanism to collect the user’s requested item. We utilised our design capabilities in CAD to make specialised parts that were 3D printed.",
         tools: "Siemens TIA Portal, Inventor (CAD), Workshop, Electronics, Control Systems",
-        img: "./resources/vending.jpg"
+        videoId: "r2VxEKg__6E"
     },
     "full-stack-card": {
         title: "Full Stack Engineer Course",
         description: "I am currently undertaking comprehensive course covering front-end and back-end web development. The course covers Web Development Foundations, Interactive Website Design, Front-End Development, Back-End Development, Full-Stack Development and assists with interview preparations. I have completed 2 of the 5 units of the course. More specifically, I have progressed through 30% of the course.",
         tools: "HTML5, CSS3, Javascript, Git, React, Node.js, PostgreSQL",
-        img: "./resources/fullstack.jpg"
+        videoId: "pJrAkqk9a-I"
     },
     "game-card": {
         title: "AI 2048 (Web-app)",
         description: "This project is a self-developed web app version of 2048. The game has be entirely recreated from scratch. Additional an AI agent is being implemented to solve the game using the Monte Carlo Tree-Search algorithm.",
         tools: "HTML5, CSS3, JavaScript, Monte Carlo Tree Search",
-        img: "./resources/ai2048.jpg"
+        videoId: "./resources/ai2048.jpg"
     },
     "chaos-card": {
         title: "Chaos (iOS Game)",
         description: "An interactive iOS hyper game that was developed from scratch. 'Chaos.' is a game about focus with a single but simple game mechanic. Tap to change directions and collect the light fragments. Move in an endless space, but beware, it’s dangerous as it’s filled with chaotic elements. Immerse yourself in the music, stunning visuals and simple gameplay. This game also includes a leaderboard system using Firebase.",
         tools: "Swift, SpriteKit, Photoshop, Firebase",
-        img: "./resources/chaos.jpg"
+        videoId:"iSHyfkDgks8"
     }
 };
 
@@ -83,11 +83,13 @@ function presentCard(event) {
         info.innerHTML = `<h2>${project.title}</h2> 
                           <p>${project.description}</p> 
                           <p><strong>Tools:</strong> ${project.tools}</p>`;
+        // Update the video in the presentation card
+        let videoContainer = document.querySelector(".presentation-card .video-container");
+        let iframe = videoContainer.querySelector("iframe");
 
-        // Update the project image
-        let img = document.querySelector(".presentation-card img");
-        img.src = project.img;
-        img.alt = project.title;
+        // Set the appropriate iframe source for the selected project
+        iframe.src = `https://www.youtube.com/embed/${project.videoId}`;
+
     }
 }
 

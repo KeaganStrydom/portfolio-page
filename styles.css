@@ -311,14 +311,21 @@ section {
   }
 
 
-  .presentation-card img {
-    max-width: 25%;
-    flex: 1;
-    height: auto;
-    align-self: center;
-    object-fit: cover;
-    transition: all 0.3s ease;
-  }
+  .video-container {
+    position: relative;
+    width: 100%;         /* Make container responsive */
+    padding-top: 56.25%; /* Maintain a 16:9 aspect ratio (9/16 = 0.5625) */
+    height: 0;
+    overflow: hidden;    /* Hide overflow */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
   
   .presentation-card.active {
     display: grid; /* Shows it when active */
