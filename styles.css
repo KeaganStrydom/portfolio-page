@@ -77,15 +77,23 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-bar {
     list-style-type: none;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     display: flex; /* place items in a row */
     gap: 1rem;
 
 }
 
 .nav-bar li {
+    padding: 0.5rem;
+    border-radius: 1rem;
     align-items: center;
+}
+
+.nav-bar li:hover {
+   
+    border: 0.01rem solid rgb(125,125,125   );
+    box-shadow: 0 0.1rem 0.1rem rgba(125, 125, 125, 0.9);
 }
 
 
@@ -135,6 +143,7 @@ section {
     height: auto;
     align-self: center;
     object-fit: cover;
+    opacity: 0.75;
     transition: all 0.3s ease;
 }
 
@@ -159,7 +168,7 @@ section {
     flex-direction: column;
     box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
     border-radius: 1.5rem;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease-in-out;
 }
 
 .card:hover {
@@ -287,6 +296,7 @@ section {
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     transition: opacity 0.3s ease;
+    display: none;
   }
 
   .presentation-card .info {
@@ -407,6 +417,7 @@ section {
 
 /* Hobby section */
 .hobbies .card {
+    transition: background 0.8s ease-in-out;
     justify-content: center;
     background-size: cover;
 }
@@ -422,31 +433,46 @@ section {
 
 
 .climbing-card {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("./resources/climb-2.png");
+    grid-row: 1;
+    grid-column: 1;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("./resources/climbing-card.png");
 }
 
 .kitesurfing-card {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("./resources/kite-2.png");
+    grid-row: 1;
+    grid-column: 3;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("./resources/kitesurfing-card.png");
 }
 
 .guitar-card {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("./resources/guitar-2.png");
+    grid-row: 3;
+    grid-column: 2;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("./resources/guitar-card.png");
 }
 
 .skating-card {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("./resources/skate-2.png");
+    grid-row: 2;
+    grid-column: 1;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("./resources/skating-card.png");
 }
 
 .surfing-card {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)), url("./resources/surf-2.jpg");
+    grid-row: 1;
+    grid-column: 2;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)), url("./resources/surfing-card.jpg");
 }
 
 .trail-card {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("./resources/trail.png");
+    grid-row: 2;
+    grid-column: 3;
+
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("./resources/trail-card.png");
 }
 
 .hobby-title-card {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("./resources/row.png");
+    grid-row: 2;
+    grid-column: 2;
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(172, 148, 212, 0.7)), url("./resources/hobby-title-card.png");
 }
 
 
@@ -454,12 +480,13 @@ section {
 footer {
     padding: 0 2.5rem;
     margin: 1.5rem;
-    margin-bottom: 5rem;
+    margin-bottom: 20rem;
     background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url("./resources/header.jpeg");
     background-size: cover;
   }
   
   .footer-content {
+    min-height: 15rem;
     display: flex;
     justify-content: space-around;
     gap: 2rem;
@@ -479,8 +506,8 @@ footer {
   }
   
   .social-icons img {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
     margin-right: 0.5rem;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -557,7 +584,7 @@ footer {
         align-items: center;
         justify-content: center;
         text-align: center;
-        max-height: 55rem;
+        max-height: 67rem;
         padding: 0.5rem;
     }
 

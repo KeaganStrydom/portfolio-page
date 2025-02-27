@@ -16,12 +16,11 @@
                 <h1 id="nav-title">Keagan Strydom</h1>
                 <nav>
                     <ul class ="nav-bar">
-                        <li>Home</li>
-                        <li>Insight</li>
-                        <li>Projects</li>
-                        <li>Tech</li>
-                        <li>Hobbies</li>
-                        <li>Contact</li>
+                        <li class="about">Insight</li>
+                        <li class="projects">Projects</li>
+                        <li class="tech">Tech</li>
+                        <li class="hobbies">Hobbies</li>
+                        <li class="connect">Connect</li>
                     </ul>
                 </nav>
             </div>
@@ -55,19 +54,19 @@
 
         <section id="about-sec">
             <div class="box-grid container">
-                <div class="card tech-stack-card">
+                <div class="card tech-stack-card tech">
                     <h3>Driven by Tech & Innovation</h3>
                     <p>> See my growing 2025 tech stack</p>
                 </div>
                 <div class="card location-card">
                     <h3>Flexible & Remote-ready</h3>
-                    <p>Cape Town based : <strong>09:54 am</strong></p>
+                    <p id = 'time-label'>Cape Town based : <strong>09:54 am</strong></p>
                 </div>
-                <div class="card project-card">
+                <div class="card project-card projects">
                     <h3>Project Spotlight</h3>
                     <p>Codeacademy: Full-Stack Web Engineer</p>
                 </div>
-                <div class="card hobby-card">
+                <div class="card hobby-card hobbies">
                     <h3>More than engineering & Off the clock</h3>
                     <ul class="hobbies-list">
                         <li>Rock climber</li>
@@ -78,7 +77,7 @@
                         <li>Guitarist</li>
                     </ul>
                 </div>
-                <div class="card connect-card">
+                <div class="card connect-card connect">
                     <h2>Get in touch</h2>
                     <p>> Lets connect</p>
                 </div>
@@ -149,7 +148,7 @@
                     </div>
 
 
-                    <div class="card chaos-card">
+                    <div class="card game-card">
                         <h3>AI 2048 (Web-app)</h3>
                     </div>
 
@@ -173,45 +172,41 @@
         <section id="hobby-sec">
             <div class="hobbies box-grid container ">
                 <div class="card hobby-title-card">
-                    <h2>My Hobbies</h2>
+                    <h2>My hobbies</h2>
                 </div>
-
-                <div class="card climbing-card">
-                    <h3>Rock climbing</h3>
-                    
-                </div>
-
-                <div class="card surfing-card">
+                <div class="card surfing-card moving">
                     <h3>Surfing</h3>
                 </div>
-
-                <div class="card kitesurfing-card">
+                <div class="card kitesurfing-card moving ">
                     <h3>Kitesurfing</h3>
                 </div>
-
-                <div class="card skating-card">
-                    <h3>Skateboarding</h3>
-                </div>
-
-                <div class="card trail-card">
+                <div class="card trail-card moving">
                     <h3>Trail running</h3>
                 </div>
-
-                <div class="card guitar-card">
+                <div class="card guitar-card moving">
                     <h3>Guitar</h3>
+                </div>
+                <div class="card skating-card moving">
+                    <h3>Skateboarding</h3>
+                </div>
+                <div class="card climbing-card moving">
+                    <h3>Rock climbing</h3>
+                    
                 </div>
             </div>
         </section>
 
-        <footer class = "floating-border">
+        <footer id="footer" class="floating-border">
+            <h2>Lets connect</h2>
+            <p>Please use this digital business card to find my social media profiles. </p>
             <div class="footer-content">
               <div class="footer-left">
                 <h3>Keagan Strydom</h3>
                 <p>Let’s build something together.</p>
                 <div class="social-icons">
-                  <img src="./resources/linkedin.png" alt="LinkedIn">
-                  <img src="./resources/insta.png" alt="Instagram">
-                  <img src="./resources/github.png" alt="GitHub">
+                  <a href="https://www.linkedin.com/in/keagan-strydom/" target="_blank"><img src="./resources/linkedin.png" alt="LinkedIn"></a>
+                  <a href="https://www.instagram.com/keaganstrydom/?hl=en" target="_blank"><img src="./resources/insta.png" alt="Instagram"></a>
+                  <a href="https://github.com/KeaganStrydom" target="_blank"><img src="./resources/github.png" alt="GitHub"></a>
                 </div>
               </div>
           
@@ -226,5 +221,7 @@
           </footer>
           
     </body>
+
+    <script src="./script.js"></script>
 
 </html>
