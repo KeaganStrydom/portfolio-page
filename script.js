@@ -90,6 +90,14 @@ function presentCard(event) {
         // Set the appropriate iframe source for the selected project
         iframe.src = `https://www.youtube.com/embed/${project.videoId}`;
 
+        let targetSection = document.getElementById("present-card");
+        if (hasLoaded && targetSection) {
+                targetSection.scrollIntoView({ behavior: "smooth" });
+        }
+
+        if (!hasLoaded) {
+            hasLoaded = true
+        } 
     }
 }
 
@@ -117,7 +125,7 @@ function moveToSection(event) {
     for (let cardClass in sectionMap) {
         if (clickedCard.classList.contains(cardClass)) {
             let targetSection = document.getElementById(sectionMap[cardClass]);
-            if (targetSection) {
+            if ( targetSection) {
                 targetSection.scrollIntoView({ behavior: "smooth" });
             }
             return; // Stop execution once we find a match
@@ -151,10 +159,12 @@ setInterval(switchColour, 200);
 updateTime();
 switchColour();
 
+let hasLoaded = false;
+
 window.onload = function() {
     // Assuming you want to simulate a click on the first project card
     const firstProjectCard = document.querySelector(".SLR-card"); // Adjust the selector accordingly
-    console.log(firstProjectCard)
+
     if (firstProjectCard) {
         firstProjectCard.click();  // Trigger the click event programmatically
     }
